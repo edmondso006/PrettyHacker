@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import StoryComponent from './../components/StoryComponent';
+import StoryComponentList from '../components/StoryComponentList';
 
 class TopStoriesContainer extends Component {
 
@@ -45,7 +45,7 @@ class TopStoriesContainer extends Component {
       <div className="flex-container">
         { topStories.map(story => {
           return (
-            <StoryComponent story={story} key={story.id} />
+            <StoryComponentList story={story} key={story.id} />
           )
         })}
       </div>

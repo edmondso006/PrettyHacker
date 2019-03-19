@@ -1,7 +1,9 @@
 import React from 'react';
-import './StoryComponent.css';
+import { Link } from 'react-router-dom';
 
-const StoryComponent = (props) => {
+import './StoryComponentList.css';
+
+const StoryComponentList = (props) => {
   let date = new Date(props.story.time * 1000);
   let datePosted = date.toISOString().split('T')[0];
   let comments = props.story.kids;
@@ -20,7 +22,9 @@ const StoryComponent = (props) => {
 
       <div className="grid-item-3">
         <span className="score">{props.story.score}👍</span>
-        <p className="posted">Comments ({comments ? comments.length : null})</p>
+        <Link to={'/story/' + props.story.id} className="comments">
+          <p className="posted">Comments ({comments ? comments.length : null})</p>
+        </Link>
       </div>
       </div>
     </div>
@@ -28,4 +32,4 @@ const StoryComponent = (props) => {
   )
 }
 
-export default StoryComponent;
+export default StoryComponentList;

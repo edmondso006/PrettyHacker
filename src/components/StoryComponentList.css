@@ -28,6 +28,10 @@
   font-size: 1.10rem;
 }
 
+.comments {
+  text-decoration: none;
+}
+
 .grid-item-3 {
   text-align: center;
   justify-content: center;
